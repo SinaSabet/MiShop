@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserProfile.Presentation.Protos";
+
+package Login.protos;
+
+
+service Login{
+	rpc GetUser(GetUserRequest) returns (UserResponse);
+}
+
+
+message GetUserRequest{
+	string email = 1;
+	string password = 2;
+}
+
+message UserResponse
+{
+	int32 userid= 1;
+	string username= 2;
+	string email= 3;
+}
